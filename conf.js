@@ -1,18 +1,23 @@
-
+require("babel-register");
 
 exports.config = {
-    framework : 'custom',
+  directConnect: true,
+  framework: 'custom',
 
-    frameworkPath: require.resolve('protractor-cucumber-framework'),
-    cucumberOpts: {
-        require: 'pages/*.js',
-        tags: false,
-        format: [],
-        profile: false,
-        'no-source': true
-      },
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
+  cucumberOpts: {
+    require: 'src/stepDefs/*.js',
+    tags: false,
+    format: [],
+  },
 
-      specs: [
-        'features/*.feature'
-      ],
+  specs: [
+    'src/features/Login.feature'
+  ],
+
+  capabilities: {
+    browserName: 'chrome',
+    useAutomationExtension: false
+  }
+
 }

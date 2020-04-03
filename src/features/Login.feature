@@ -2,10 +2,9 @@ Feature: Login
     To test the login functionality
 
     Scenario Outline: Login Happy Path
-        
         Given I launch the application
-        Then I login with <UserName>
-        Then I enter <Password>
+        Then I enter username
+        Then I enter password
         Then I click on Login
 
         Examples:

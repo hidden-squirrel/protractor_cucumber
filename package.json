@@ -3,13 +3,16 @@
     "url": "https://github.com/hidden-squirrel/protractor_cucumber",
     "version": "1.1.1",
     "scripts": {
-        "build": "npm install"
+        "build": "npm install",
+        "wd-update": "webdriver-manager update",
+        "protractor": "npm install protractor"
     },
     "dependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-es2015": "^6.24.1",
         "babel-register": "^6.26.0",
-        "cucumber": "^6.0.5"
+        "cucumber": "^6.0.5",
+        "protractor": "^5.4.3"
     },
     "devDependencies": {
         "protractor-cucumber-framework": "^6.2.1"
