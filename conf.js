@@ -18,8 +18,6 @@ exports.config = {
 
   onPrepare: function () {
     browser.ignoreSynchronization = true;
-    // var { setDefaultTimeout } = require("cucumber");
-    // setDefaultTimeout(60 * 1000);
   },
 
   capabilities: {

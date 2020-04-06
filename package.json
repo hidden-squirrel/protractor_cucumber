@@ -14,6 +14,7 @@
         "babel-preset-es2015": "^6.24.1",
         "babel-register": "^6.26.0",
         "cucumber": "^6.0.5",
+        "cucumber-assert": "^2.0.1",
         "protractor": "5.0.0",
         "webdriver-manager": "^12.1.7"
     },
