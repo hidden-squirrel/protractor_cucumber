@@ -23,7 +23,7 @@ Then('I enter password', async function () {
 Then('I click on Login', async function () {
     LoginPage.button.click();
     console.log(await element(by.xpath("//span[contains(.,'Log in to Facebook')]")).isPresent());
-    assert.equal(await LoginPage.email.isPresent(), true);
+    assert.equal(await LoginPage.email.isPresent(), false); //this step should fail
 });
 
 
