@@ -4,7 +4,7 @@ import { element } from 'protractor';
 var { setDefaultTimeout } = require("cucumber");
 setDefaultTimeout(60 * 1000);
 var LoginPage = new Login();
-var EC = protractor.ExpectedConditions;
+
 Given('I launch the application', async function () {
     browser.get("https://www.facebook.com/");
     console.log(await LoginPage.email.isPresent());

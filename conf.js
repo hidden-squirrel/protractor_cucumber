@@ -9,7 +9,7 @@ exports.config = {
   cucumberOpts: {
     require: 'src/stepDefs/*.js',
     tags: "@Login",
-    format: [],
+    format: [ 'report-portal-formatter.js'],
   },
 
   specs: [
