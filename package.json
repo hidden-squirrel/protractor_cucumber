@@ -7,16 +7,19 @@
         "update": "npm update",
         "wd-update": "webdriver-manager update",
         "protractor": "npm install protractor",
-        "test": "protractor conf.js",
-        "rp": "node ./node_modules/cucumber/bin/cucumber-js -f ./reportportal/reportportal-agent.js"
+        "test": "protractor conf.js"
     },
     "dependencies": {
+        "assert": "^2.0.0",
         "babel-cli": "^6.26.0",
         "babel-preset-es2015": "^6.24.1",
         "babel-register": "^6.26.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
         "cucumber": "^6.0.5",
+        "cucumber-assert": "^2.0.1",
         "protractor": "5.0.0",
-        "reportportal-agent-cucumber": "^2.0.6",
+        "reportportal-agent-cucumber": "git+https://github.com/hidden-squirrel/reportporal-cucumber-plugin.git",
         "webdriver-manager": "^12.1.7"
     },
     "devDependencies": {

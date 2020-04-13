@@ -3,7 +3,7 @@ Feature: Login
     To test the login functionality
 
     @HappyFlow
-    Scenario Outline: Login Happy Path
+    Scenario Outline: Login Happy Path_<UserName>
         Given I launch the application
         Then I enter username
         Then I enter password
@@ -13,5 +13,5 @@ Feature: Login
         Examples:
             | UserName | Password |
             | xyz      | ******   |
-            # | abc      | *****    |
+            | abc      | *****    |
 

@@ -7,7 +7,7 @@ exports.config = {
 
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    require: 'src/stepDefs/*.js',
+    require: 'src/step_definitions/*.js',
     tags: "@Login",
     format: [ 'report-portal-formatter.js'],
   },
@@ -24,6 +24,7 @@ exports.config = {
 
   capabilities: {
     browserName: 'chrome',
-  }
+  },
+
 
 }

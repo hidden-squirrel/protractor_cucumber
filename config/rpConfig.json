@@ -3,5 +3,6 @@
     "endpoint": "https://web.demo.reportportal.io/api/v1",
     "launch": "test_launch",
     "project": "hidden-squirrel_personal",
-    "takeScreenshot": "onFailure"
+    "takeScreenshot": "onFailure",
+    "scenarioBasedStatistics": true
   }
