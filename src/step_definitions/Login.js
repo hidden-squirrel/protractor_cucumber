@@ -10,24 +10,25 @@ var expect = chai.expect;
 var LoginPage = new Login();
 
 Given('I launch the application', async function () {
-    try{
-    await browser.get("https://www.facebook.com/");
-    expect(true).to.equal(true,"Browser should be launched successfully");
+    try {
+        await browser.get("https://www.facebook.com/");
+        expect(true).to.equal(true, "Browser should be launched successfully");
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
-    
+
 });
 
-// Then(/^I enter "(.*)" in "([^"]*)"$/, async function (text,element) {
-    Then('I enter {string} in {string}',async function(text,element) {
+Then('I enter {string} in {string}', async function (text, element) {
     browser.sleep(2000)
-    console.log(text,element)
+    console.log(text, element)
     await LoginPage.data[element].sendKeys(text)
     // await LoginPage.email.sendKeys("syama");
     // expect(await LoginPage.email.isPresent()).to.equal(false,"Email should not be displayed")
 });
+
+
 
 Then('I enter password', async function () {
     await LoginPage.data['password'].sendKeys("syama");
@@ -39,8 +40,26 @@ Then('I click on Login', async function () {
     await LoginPage.data['button'].click();
 });
 
-Then('I verify user is logged in',async function(){
-    expect(await LoginPage.email.isPresent()).to.equal(false,"Log into facebook should not be displayed");
+Then('I verify user is logged in for {string}', async function (tcname) {
+
+    const excelToJson = require('convert-excel-to-json');
+    const result = excelToJson({
+        sourceFile: 'C://Projects//Protratcor_Cucumber//data//datasheet.xlsx',
+        header:{
+            rows: 1
+        },
+        columnToKey: {
+            A: 'TC_Name',
+            B: 'Name',
+            C: 'id',
+            D:'DOb'
+        },
+        sheets: ['testdata']
+    });
+    console.log(result.testdata);
+    var data = (result.testdata).filter(test => test.TC_Name == tcname)
+    console.log(data[0].Name)
+    // expect(await LoginPage.email.isPresent()).to.equal(false, "Log into facebook should not be displayed");
 })
 
 
