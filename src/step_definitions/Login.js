@@ -49,13 +49,11 @@ Then('I verify user is logged in for {string}', async function (tcname) {
             rows: 1
         },
         columnToKey: {
-            A: 'TC_Name',
-            B: 'Name',
-            C: 'id',
-            D:'DOb'
+            '*': '{{columnHeader}}'
         },
         sheets: ['testdata']
     });
+    console.log(r)
     console.log(result.testdata);
     var data = (result.testdata).filter(test => test.TC_Name == tcname)
     console.log(data[0].Name)
