@@ -10,24 +10,33 @@ var expect = chai.expect;
 var LoginPage = new Login();
 
 Given('I launch the application', async function () {
+    try{
     await browser.get("https://www.facebook.com/");
     expect(true).to.equal(true,"Browser should be launched successfully");
+    }
+    catch(err){
+        console.error(err)
+    }
     
 });
 
-Then('I enter username', async function () {
-    await LoginPage.email.sendKeys("syama");
+// Then(/^I enter "(.*)" in "([^"]*)"$/, async function (text,element) {
+    Then('I enter {string} in {string}',async function(text,element) {
+    browser.sleep(2000)
+    console.log(text,element)
+    await LoginPage.data[element].sendKeys(text)
+    // await LoginPage.email.sendKeys("syama");
     // expect(await LoginPage.email.isPresent()).to.equal(false,"Email should not be displayed")
 });
 
 Then('I enter password', async function () {
-    await LoginPage.password.sendKeys("syama");
+    await LoginPage.data['password'].sendKeys("syama");
     // expect(true).to.equal(false);
     // assert.fail("Log in to Fb should not be displayed")
 });
 
 Then('I click on Login', async function () {
-    await LoginPage.button.click();
+    await LoginPage.data['button'].click();
 });
 
 Then('I verify user is logged in',async function(){
